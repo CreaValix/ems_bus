@@ -1,0 +1,8 @@
+{
+  "domain": "buderus_ems",
+  "name": "Buderus EMS bud driver",
+  "documentation": "https://github.com/CreaValix/ems_bus/blob/master/README.md",
+  "dependencies": ["climate", "input_number", "input_select", "switch"],
+  "codeowners": ["Alexander Simon"],
+  "requirements": ["posix_ipc>=1.0.4"]
+}
