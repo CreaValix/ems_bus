@@ -9,7 +9,7 @@ void setup_queue(mqd_t *queue, char *name) {
     struct mq_attr queue_attr;
     queue_attr.mq_maxmsg = 32;
     queue_attr.mq_msgsize = MAX_PACKET_SIZE;
-    *queue = mq_open(name, O_RDWR | O_NONBLOCK | O_CREAT, 0666, queue_attr);
+    *queue = mq_open(name, O_RDWR | O_NONBLOCK | O_CREAT, 0666, &queue_attr);
 }
 
 void close_queues() {
