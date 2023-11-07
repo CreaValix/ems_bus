@@ -12,7 +12,7 @@
 int tx_retries = -1;
 uint8_t tx_buf[MAX_PACKET_SIZE];
 size_t tx_len;
-uint8_t client_id = CLIENT_ID;
+static uint8_t client_id = CLIENT_ID;
 
 void tx_break() {
     int ret;
