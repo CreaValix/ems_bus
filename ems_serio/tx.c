@@ -26,7 +26,7 @@ void tx_break() {
         return;
     }
     log(LOG_CHAR, "WR 0x%02hhx BREAK", BREAK_OUT[0]);
-    write(port, BREAK_OUT, 1);
+    ret = write(port, BREAK_OUT, 1);
     set_parity(0);
 }
 
