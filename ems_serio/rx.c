@@ -14,7 +14,8 @@
 size_t rx_len;
 uint8_t rx_buf[MAX_PACKET_SIZE];
 enum STATE state = RELEASED;
-uint8_t polled_id, client_id;
+uint8_t polled_id;
+extern uint8_t client_id;
 uint8_t read_expected[HDR_LEN];
 struct timeval got_bus;
 
