@@ -24,7 +24,6 @@
 
 #define handle_error_en(en, msg) do { errno = en; perror(msg); exit(EXIT_FAILURE); } while (0)
 
-struct termios tios;
 int waitingfor;
 struct STATS stats;
 pthread_t readloop = 0;
