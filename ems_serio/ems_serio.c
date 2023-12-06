@@ -106,7 +106,7 @@ int start(char *port_path) {
     }
     setup_queue(&rx_queue, RX_QUEUE_NAME);
     if (rx_queue == -1) {
-        log(LOG_ERROR, "Failed to open RX message queue: %i  %s", rx_queue, strerror(errno));
+        log(LOG_ERROR, "Failed to open RX message queue: %i %s", rx_queue, strerror(errno));
         return(-1);
     }
     log(LOG_VERBOSE, "Connected to message queues");

@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <sys/time.h>
 #include <stdio.h>
+#include <inttypes.h>
 
 #include "queue.h"
 #include "serial.h"
@@ -107,7 +108,7 @@ void handle_poll() {
 
     gettimeofday(&now, NULL);
     have_bus = (now.tv_sec - got_bus.tv_sec) * 1000000 + now.tv_usec - got_bus.tv_usec;
-    log(LOG_VERBOSE, "Occupying bus since %li us", have_bus);
+    log(LOG_VERBOSE, "Occupying bus since %"PRIi64" us", have_bus);
 
     if (tx_retries >= 0 && have_bus < MAX_BUS_TIME) {
         print_packet(1, LOG_PACKET, tx_buf, tx_len);
