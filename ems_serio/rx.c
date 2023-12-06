@@ -93,9 +93,11 @@ void rx_packet(int *abort) {
 
         // Discard all character above the message limit and warn.
         if (rx_len >= MAX_PACKET_SIZE) {
-            if (rx_len == MAX_PACKET_SIZE)
-                log(LOG_ERROR, "Maximum packet size reached. Following characters ignored."
-                               "\tIs your serial connected and is it detecting breaks?");
+            if (rx_len == MAX_PACKET_SIZE) {
+                log(LOG_ERROR, "Maximum packet size reached. Following characters ignored. "
+                               "Is your serial connected and is it detecting breaks?");
+                rx_len++;
+            }
             continue;
         }
         rx_buf[rx_len++] = c;
